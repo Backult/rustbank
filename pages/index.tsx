@@ -1,6 +1,8 @@
 import { Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import ItemCard from "../components/ItemCard/ItemCard";
+import rustData from "../data/rust";
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +14,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Heading>Sup</Heading>
+      {rustData.map((item, index) => (
+        <ItemCard key={index} {...item} />
+      ))}
     </div>
   );
 };
